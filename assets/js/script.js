@@ -8,7 +8,7 @@
       let qrValor = qrInput.value;
             //condicao para analizar se foi inserido algo no  campo de input
         if (!qrValor){
-          //alert ('Insira uma URL para gerar um QR-CODE!')
+          //Gerando um alert de erro quando nao for digitado nada
           Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -17,6 +17,7 @@
           });
           return;
         };
+        //API para gerar QR
             geradorBtn.innerText = "Gerando um QR code..."
               qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=${qrValor}`;
                 qrImg.addEventListener ('load',() => {
